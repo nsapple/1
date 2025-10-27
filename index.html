@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening example.com...</title>
+</head>
+<body onload="openMultipleTabs()">
+
+    <h1>Opening example.com</h1>
+    <p>Your browser may have blocked the new tabs. Please ensure that pop-up blockers are disabled for this page.</p>
+
+    <script>
+        function openMultipleTabs() {
+            // Set the variable for the number of tabs you want to open.
+            const numberOfTabs = 167; // Change this value to open a different number of tabs.
+            const urlToOpen = 'https://www.youtube.com';
+
+            for (let i = 0; i < numberOfTabs; i++) {
+                // The loop will execute the window.open() method the number of times specified by the variable.
+                // The second parameter, a unique window name ('_blank' + i), helps ensure the browser opens a new tab each time instead of reusing one.
+                window.open(urlToOpen, '_blank' + i);
+            }
+        }
+    </script>
+
+</body>
+</html>
