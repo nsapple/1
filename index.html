@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open New Window</title>
+</head>
+<body>
+
+    <h1>Click the button to open the code in a new window</h1>
+    <button onclick="openNewWindow()">Open Code Window</button>
+
+    <script>
+        function openNewWindow() {
+            const newWindow = window.open("", "_blank", "width=600,height=400");
+            
+            // This writes the provided HTML directly to the new window.
+            newWindow.document.write(`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opening example.com...</title>
 </head>
 <body onload="openMultipleTabs()">
@@ -13,7 +31,7 @@
     <script>
         function openMultipleTabs() {
             // Set the variable for the number of tabs you want to open.
-            const numberOfTabs = 16700; // Change this value to open a different number of tabs.
+            const numberOfTabs = 2; // Change this value to open a different number of tabs.
             const urlToOpen = 'https://www.youtube.com';
 
             for (let i = 0; i < numberOfTabs; i++) {
@@ -21,6 +39,12 @@
                 // The second parameter, a unique window name ('_blank' + i), helps ensure the browser opens a new tab each time instead of reusing one.
                 window.open(urlToOpen, '_blank' + i);
             }
+        }
+    <\/script>
+
+</body>
+</html>
+            `);
         }
     </script>
 
